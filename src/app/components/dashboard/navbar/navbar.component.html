@@ -1,0 +1,102 @@
+
+    <!-- <div *ngIf="IsAdmin()">
+    <button  [routerLink]="['usuario']" mat-button class="menu-button">
+     <mat-icon>person</mat-icon>
+     <span>Usuarios</span>
+   </button>  
+<button [routerLink]="['lugar']" mat-button class="menu-button">
+     <mat-icon>place</mat-icon>
+     <span>Lugares</span>
+   </button>
+<button [routerLink]="['recurso']" mat-button class="menu-button">
+     <mat-icon>phone</mat-icon>
+     <span>Recursos</span>
+   </button>
+
+   <button [routerLink]="['usuarioRecurso']" mat-button class="menu-button">
+    <mat-icon>assignment_turned_in</mat-icon>
+    <span>Usuarios/Recursos</span>
+  </button>
+    </div> -->
+    
+    <header>
+      <nav class="navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+    <a href="#" class="logo">logo</a>
+    <ul class="main-nav" id="js-menu">
+      <li>
+        <a [routerLink]="['home']" class="nav-links">Home</a>
+      </li>
+      <li>
+        <a href="#" class="nav-links">Products</a>
+      </li>
+      <li>
+        <a href="#" class="nav-links">About Us</a>
+      </li>
+      <li>
+        <a href="#" class="nav-links">Contact Us</a>
+      </li>
+      <li>
+        <a href="#" class="nav-links">Blog</a>
+      </li>
+    </ul>
+  </nav>
+ 
+</header>
+<body>
+<!-- Aquí empieza el dashboard-->
+
+<nav class="main-menu">
+  <ul>
+    <li>
+        <a [routerLink]="['home']">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text">
+                Dashboard
+            </span>
+        </a>
+    </li>
+  <div *ngIf="IsAdmin()">
+    <li class="has-subnav">
+      <a [routerLink]="['usuario']">
+          <i class="fa fa-laptop fa-2x"></i>
+          <span class="nav-text">
+              Gestión de usuarios
+          </span>
+      </a>
+      
+  </li>
+  <li class="has-subnav">
+    <a [routerLink]="['recurso']">
+       <i class="fa fa-list fa-2x"></i>
+        <span class="nav-text">
+            Gestión de tareas
+        </span>
+    </a></li>
+  </div>
+
+  <li class="has-subnav">
+    <a [routerLink]="['usuarioRecurso']">
+      <i class="fa fa-list fa-2x"></i>
+        <span class="nav-text">
+            Tareas Asignadas
+        </span>
+    </a>
+</li>  
+
+      <li class="has-subnav">
+          <a href="#">
+              <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text" (click)="usuarioservice.logout()">
+                  Cerrar sesión
+              </span>
+          </a>
+      </li>
+  </ul>
+
+</nav>
+
+<div class="area"><router-outlet></router-outlet></div>
+</body> 

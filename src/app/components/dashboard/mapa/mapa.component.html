@@ -1,0 +1,36 @@
+<body class="area">
+    <div>
+    <div class="twelve columns text-center">
+      <h1>Lista de tareas</h1>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Categoría</th>
+              <th width="305px">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let recurso of recursos">
+              <th scope="row">{{ recurso.recursoId }}</th>
+              <td ><li [class.tachado] ="recurso.terminada">
+                <input [(ngModel)]="recurso.terminada" (change)="cambiarEstadoDeTarea()" type="checkbox">
+                {{recurso.nombre}}
+              </li></td>
+              <td>{{ recurso.tipo }}</td>
+              <td>
+  
+                <button [class.tachado] ="recurso.terminada" type="button" class="btn btn-outline-primary" style="margin: 10px" [(ngModel)]="recurso.terminada" (change)="cambiarEstadoDeTarea()">Realizar</button>
+                          
+              </td>
+    
+            </tr>
+          </tbody>
+        </table>
+     </div>
+    </div>
+    </body>
+  
